@@ -44,7 +44,8 @@ public class BookReader implements  Reader {
                 i = inputStream.read(data);
             }
             dic.Sort();
-            dic.WriteToFile("D:\\Study\\java advance\\out.txt");
+            String out = book.getParent() + File.separator + "out.txt";
+            dic.WriteToFile(out);
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -56,6 +57,7 @@ public class BookReader implements  Reader {
         try {
             FileInputStream fileInputStream = new FileInputStream(book);
             BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+
 
             byte[] data = new byte[1024];
 
@@ -82,7 +84,8 @@ public class BookReader implements  Reader {
             }
 
             dic.Sort();
-            dic.WriteToFile("D:\\Study\\java advance\\out.txt");
+            String out = book.getParent() + File.separator + "out.txt";
+            dic.WriteToFile(out);
 
         }catch (IOException e){
             e.printStackTrace();
@@ -118,7 +121,8 @@ public class BookReader implements  Reader {
             }
 
             dic.Sort();
-            dic.WriteToFile("D:\\Study\\java advance\\out.txt");
+            String out = book.getParent() + File.separator + "out.txt";
+            dic.WriteToFile(out);
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -126,7 +130,7 @@ public class BookReader implements  Reader {
 
 
     public static void main(String[] args) {
-        BookReader b = new BookReader("D:\\Study\\java advance\\ok.txt");
-        b.StreamReader();
+        BookReader b = new BookReader(""); // input file location
+        b.BufferedStream();
     }
 } 

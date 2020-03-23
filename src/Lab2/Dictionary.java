@@ -45,7 +45,7 @@ public class Dictionary  {
     void PrintSorted(){
         Sort();
         for (Word temp: SortedDictionary) {
-            System.out.println(temp.getInstance());
+            System.out.println(temp.getStatus());
         }
     }
 
@@ -54,7 +54,7 @@ public class Dictionary  {
         BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
 
         for (int i=0;i < SortedDictionary.size(); i++ ) {
-            writer.write(SortedDictionary.get(i).getInstance());
+            writer.write(SortedDictionary.get(i).getStatus());
             writer.newLine();
             writer.flush();
         }
@@ -88,7 +88,7 @@ class Word{
         return  word;
     }
 
-    String getInstance(){
+    String getStatus(){
         return word +" "+ frequency ;
     }
 
